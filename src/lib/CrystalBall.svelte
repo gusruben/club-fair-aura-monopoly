@@ -2,7 +2,7 @@
 	import MagicBackground from "./MagicBackground.svelte";
 </script>
 
-<div class="rounded-full w-full h-full relative">
+<div class="rounded-full w-full h-full relative bg-brand-red">
     <!-- duplicate to blur for the background -->
     <div class="ball ball-copy">
         <MagicBackground
