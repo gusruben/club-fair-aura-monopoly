@@ -12,7 +12,8 @@
             height={50}
         />
     </div>
-    <img id="logo" src="hackclub-curved.svg" alt="">
+    <img class="logo opacity-20" src="hackclub-curved.svg" alt="">
+    <img class="logo opacity-80" src="hackclub-curved-glow.svg" alt="">
 </div>
 
 <style>
@@ -55,11 +56,11 @@
         inset 0px -50px 20px rgba(239, 139, 153, 0.2);
 }
 
-#logo {
+.logo {
     position: absolute;
     left: 50%;
-    top: 50%;
-    height: 40rem;
+    top: 35%;
+    height: 15rem;
     transform: translate(-50%, -50%) rotateX(15deg);
 }
 </style>
