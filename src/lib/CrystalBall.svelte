@@ -3,7 +3,17 @@
 </script>
 
 <div class="rounded-full w-full h-full relative">
-    <div id="ball">
+    <!-- duplicate to blur for the background -->
+    <div class="ball ball-copy">
+        <MagicBackground
+            color1={{red: 236, green: 55, blue: 80}}
+            color2={{red: 255, green: 140, blue: 55}}
+            shiftStrength={1000}
+            width={50}
+            height={50}
+        />
+    </div>
+    <div class="ball">
         <MagicBackground
             color1={{red: 236, green: 55, blue: 80}}
             color2={{red: 255, green: 140, blue: 55}}
@@ -17,7 +27,7 @@
 </div>
 
 <style>
-#ball {
+.ball {
     position: fixed;
     top: 0;
     right: 0;
@@ -29,8 +39,7 @@
     mask-size: 100%;
     mask-image: radial-gradient(circle at 50% 120%, black, rgba(0, 0, 0, 0.8));
 }
-
-#ball::after {
+.ball::after {
     content: '';
     position: absolute;
     top: 0;
@@ -39,8 +48,7 @@
     left: 0;
     background: radial-gradient(circle at 50% 0px, rgba(235, 173, 181, 0.9), rgba(255, 255, 255, 0) 58%);
 }
-
-#ball::before {
+.ball::before {
     content: '';
     position: absolute;
     top: 0;
@@ -54,6 +62,12 @@
         inset 0px 20px 40px rgba(239, 202, 207, 0.3),
         inset 0px 10px 20px rgba(255, 255, 255, 0.2),
         inset 0px -50px 20px rgba(239, 139, 153, 0.2);
+}
+
+.ball-copy {
+    filter: blur(100px);
+    mask: none;
+    overflow: hidden;
 }
 
 .logo {
