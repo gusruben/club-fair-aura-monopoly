@@ -8,7 +8,7 @@
         <MagicBackground
             color1={{red: 236, green: 55, blue: 80}}
             color2={{red: 255, green: 140, blue: 55}}
-            shiftStrength={1000}
+            shiftStrength={3}
             width={50}
             height={50}
         />
@@ -17,7 +17,7 @@
         <MagicBackground
             color1={{red: 236, green: 55, blue: 80}}
             color2={{red: 255, green: 140, blue: 55}}
-            shiftStrength={1000}
+            shiftStrength={3}
             width={50}
             height={50}
         />
@@ -33,7 +33,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: -50;
+    z-index: 20;
     border-radius: 9999px;
     mask-repeat: no-repeat;
     mask-size: 100%;
@@ -46,6 +46,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: 30;
     background: radial-gradient(circle at 50% 0px, rgba(235, 173, 181, 0.9), rgba(255, 255, 255, 0) 58%);
 }
 .ball::before {
@@ -55,7 +56,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 10;
+    z-index: 30;
     border-radius: 9999px;
     box-shadow: 
         inset 0px 30px 20px rgba(238, 86, 107, 0.3),
@@ -76,5 +77,6 @@
     top: 35%;
     height: 15rem;
     transform: translate(-50%, -50%) rotateX(15deg);
+    z-index: 25
 }
 </style>
