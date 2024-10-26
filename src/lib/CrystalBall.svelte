@@ -8,9 +8,11 @@
             color1={{red: 236, green: 55, blue: 80}}
             color2={{red: 255, green: 140, blue: 55}}
             shiftStrength={1000}
+            width={50}
+            height={50}
         />
     </div>
-    <img id="logo" src="hackclub.svg" alt="">
+    <img id="logo" src="hackclub-curved.svg" alt="">
 </div>
 
 <style>
@@ -56,7 +58,8 @@
 #logo {
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 50%;
+    height: 40rem;
     transform: translate(-50%, -50%) rotateX(15deg);
 }
 </style>
