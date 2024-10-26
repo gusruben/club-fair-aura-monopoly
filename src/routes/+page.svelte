@@ -19,8 +19,14 @@
 </script>
 
 <div class="fixed inset-0 bg-gray-950 overflow-hidden">
+    <div class="fixed inset-0 -z-50 opacity-20">
+        {#each Array(100) as _}
+            <div class="star" style={`--x: ${Math.random() * 100}%; --y: ${Math.random() * 100}%; --size: ${3 + Math.random() * 5}px`}></div>
+        {/each}
+    </div>
+    
     <div class="flex flex-col gap-5 justify-center">
-        <h1 class="font-sans font-bold text-white text-[8rem] uppercase text-center opacity-20 leading-none h-12">Find Your Fortune</h1>
+        <h1 class="font-sans font-bold text-gray-800S text-[8rem] uppercase text-center leading-none h-12">Find Your Fortune</h1>
         <h1 class="font-sans text-white text-[6rem] text-center leading-none z-10">
             Text <span class="font-bold text-transparent bg-gradient-to-br from-brand-orange to-brand-red bg-clip-text">{formatPhoneNumber(phoneNumber)}</span>
         </h1>
@@ -37,3 +43,16 @@
         <CrystalBall />
     </div>
 </div>
+
+<style>
+    .star {
+        position: absolute;
+        z-index: -50;
+        left: var(--x);
+        top: var(--y);
+        width: var(--size);
+        height: var(--size);
+        background-color: white;
+        border-radius: var(--size);
+    }
+</style>
