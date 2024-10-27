@@ -21,7 +21,7 @@
 <div class="fixed inset-0 bg-gray-950 overflow-hidden">
     <div class="fixed inset-0 -z-50 opacity-20">
         {#each Array(100) as _}
-            <div class="star" style={`--x: ${Math.random() * 100}%; --y: ${Math.random() * 100}%; --size: ${3 + Math.random() * 5}px`}></div>
+            <div class="star" style={`--x: ${Math.random() * 100}%; --y: ${Math.random() * 100}%; --size: ${5 + Math.random() * 10}px`}></div>
         {/each}
     </div>
     
@@ -62,6 +62,8 @@
         width: var(--size);
         height: var(--size);
         background-color: white;
-        border-radius: var(--size);
+        /* border-radius: var(--size); */
+        --half: calc(var(--size)/2);
+        mask: radial-gradient(var(--half) at var(--half) var(--half), transparent 98%, red) calc(-1*var(--half)) calc(-1*var(--half));
     }
 </style>
