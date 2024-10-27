@@ -24,6 +24,7 @@
     </div>
     <img class="logo opacity-20" src="hackclub-curved.svg" alt="">
     <img class="logo opacity-80" src="hackclub-curved-glow.svg" alt="">
+    <img class="base" src="base.svg" alt="">
 </div>
 
 <style>
@@ -78,5 +79,14 @@
     height: 15rem;
     transform: translate(-50%, -50%) rotateX(15deg);
     z-index: 25
+}
+
+.base {
+    position: absolute;
+    left: 50%;
+    bottom: -11%;
+    width: 100%;
+    transform: translateX(-50%);
+    z-index: 40;
 }
 </style>

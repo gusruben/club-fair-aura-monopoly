@@ -32,16 +32,22 @@
         </h1>
     </div>
 
-    <div class="bg-gray-900 w-2/3 mx-auto my-10 p-5 rounded-lg border-gray-800 border-2 text-3xl text-white">
-        {fortunes[0][0]}: {fortunes[0][1]}
+    <div class="bg-gray-900 w-2/3 mx-auto my-10 p-5 rounded-lg border-gray-800 border-2 text-3xl text-white scale-110">
+        <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
+        <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span><nobr>
+        -{fortunes[0][0]}: {fortunes[0][1]}
     </div>
     {#each fortunes.slice(1) as fortune}
-        <div class="bg-gray-900 w-2/3 mx-auto my-5 p-5 rounded-lg border-gray-800 border-2 text-3xl scale-[90%] text-white">{fortune[0]}: {fortune[1]}</div>
+        <div class="bg-gray-900 w-2/3 mx-auto my-5 p-5 rounded-lg border-gray-800 border-2 text-3xl scale-[90%] text-white">
+            <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
+            <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span><nobr>
+            -{fortune[0]}: {fortune[1]}
+        </div>
     {/each}
 
-    <img src="hands-on-ball1.png" alt="" class="absolute h-[80%] -bottom-[20%] left-1/2 -translate-x-1/2">
+    <!-- <img src="hands-on-ball1.png" alt="" class="absolute h-[80%] -bottom-[20%] left-1/2 -translate-x-1/2"> -->
     <div class="scale-75 translate-y-20">
-        <div class="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-[40%] w-[90vh] h-[90vh]">
+        <div class="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-[20%] w-[90vh] h-[90vh] scale-75">
             <CrystalBall />
         </div>
     </div>
