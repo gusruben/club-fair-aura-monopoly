@@ -1,14 +1,10 @@
 <script lang="ts">
 	import CrystalBall from './../lib/CrystalBall.svelte';
+    import { fortunes } from '$lib/shared.svelte.js';
 
     const phoneNumber = "11235556789"
-    const fortunes = [
-        [9824, "A splinter is in your future."],
-        [2938, "You are lucky to have lived this long."],
-        [6642, "Nose hairs will become a problem."],
-        [7076, "You are not illiterate."],
-        [1025, "Error 404: Fortune not found"],
-    ]
+
+    $: console.log(fortunes)
 
     function formatPhoneNumber(phoneNumber: string) {
 		const cleaned = ('' + phoneNumber).replace(/\D/g, '');
@@ -44,6 +40,8 @@
             -{fortune[0]}: {fortune[1]}
         </div>
     {/each}
+
+    {JSON.stringify(fortunes)}
 
     <!-- <img src="hands-on-ball1.png" alt="" class="absolute h-[80%] -bottom-[20%] left-1/2 -translate-x-1/2"> -->
     <div class="scale-75 translate-y-20">
