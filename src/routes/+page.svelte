@@ -5,26 +5,19 @@
     const phoneNumber = "11235556789"
 
     $: console.log(fortunes)
-
-    function formatPhoneNumber(phoneNumber: string) {
-		const cleaned = ('' + phoneNumber).replace(/\D/g, '');
-		const match = cleaned.match(/^(\d{1})(\d{3})(\d{3})(\d{4})$/);
-		if (match) return `(${match[2]}) ${match[3]}-${match[4]}`;
-		return phoneNumber;
-	}
 </script>
 
 <div class="fixed inset-0 bg-gray-950 overflow-hidden">
     <div class="fixed inset-0 -z-50 opacity-20">
         {#each Array(100) as _}
-            <div class="star" style={`--x: ${Math.random() * 100}%; --y: ${Math.random() * 100}%; --size: ${5 + Math.random() * 10}px`}></div>
+            <div class="star" style={`--x: ${Math.random() * 100}%; --y: ${Math.random() * 100}%; --size: ${8 + Math.random() * 10}px`}></div>
         {/each}
     </div>
     
     <div class="flex flex-col gap-5 justify-center">
         <h1 class="font-sans font-bold text-gray-800 text-[8rem] uppercase text-center leading-none h-12">Find Your Fortune</h1>
         <h1 class="font-sans text-white text-[6rem] text-center leading-none z-10">
-            Text <span class="font-bold text-transparent bg-gradient-to-br from-brand-orange to-brand-red bg-clip-text">{formatPhoneNumber(phoneNumber)}</span>
+            Text <span class="font-bold text-transparent bg-gradient-to-br from-brand-orange to-brand-red bg-clip-text">{import.meta.env.VITE_PHONE_NUMBER}</span>
         </h1>
     </div>
 
