@@ -34,6 +34,10 @@
                         border-2 text-3xl text-white fortune-card" style="--index: {i + 1}" >
                 <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
                 <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span><nobr>
+                <!-- <span class="relative after:absolute after:w-full after:h-[60%] after:bg-gradient-to-br after:from-brand-orange
+                            after:to-brand-red after:inset-0 after:-rotate-6 after:translate-y-[30%] after:brightness-50 after:saturate-50">
+                    ({Math.random().toString().slice(2,5)}) {Math.random().toString().slice(2,5)}
+                </span><nobr> -->
                 -{fortune[0]}: {fortune[1]}
             </div>
         {/each}
@@ -65,7 +69,7 @@
     }
 
     .fortune-card {
-        opacity: calc(1 - (var(--index) + 1) / 8);
+        opacity: calc(1 - (var(--index) - 1) / 8);
         scale: calc(70% + (50% / var(--index)));
         /* margin-bottom: calc(2rem - (var(--index) * var(--index) * 0.2rem)) */
         margin-bottom: calc(1rem + (1rem / (var(--index) * var(--index))))
