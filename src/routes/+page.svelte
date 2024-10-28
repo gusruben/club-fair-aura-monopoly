@@ -1,10 +1,17 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import CrystalBall from './../lib/CrystalBall.svelte';
-    import { fortunes } from '$lib/shared.svelte.js';
 
-    const phoneNumber = "11235556789"
+    // the current list of fortunes is prefetched in +page.server.ts 
+    let { data } = $props();
+    let fortunes = $state(data.fortunes);
 
-    $: console.log(fortunes)
+    onMount(async () => {
+        setInterval(async () => {
+            fortunes = await (await fetch("/api/fortunes")).json();
+        }, 5000)
+    })
+
 </script>
 
 <div class="fixed inset-0 bg-gray-950 overflow-hidden">
@@ -22,12 +29,19 @@
     </div>
 
     <div class="bg-gray-900 w-2/3 mx-auto my-10 p-5 rounded-lg border-gray-800 border-2 text-3xl text-white scale-110">
-        <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
-        <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span><nobr>
-        -{fortunes[0][0]}: {fortunes[0][1]}
+        {#if fortunes.length}
+            <p>
+                <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
+                <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span><nobr>
+                -{fortunes[0][0]}: {fortunes[0][1]}
+            </p>
+        {:else}
+            <p class="mx-auto">Waiting on a text...</p>
+        {/if}
     </div>
-    {#each fortunes.slice(1) as fortune}
-        <div class="bg-gray-900 w-2/3 mx-auto my-5 p-5 rounded-lg border-gray-800 border-2 text-3xl scale-[90%] text-white">
+    {#each fortunes.slice(1) as fortune, i}
+        <div class="bg-gray-900 w-2/3 mx-auto my-5 p-5 rounded-lg border-gray-800
+                    border-2 text-3xl scale-[90%] text-white fortune-card" style="--opacity: {1 - (i + 1) / 5}" >
             <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
             <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span><nobr>
             -{fortune[0]}: {fortune[1]}
@@ -56,5 +70,9 @@
         /* border-radius: var(--size); */
         --half: calc(var(--size)/2);
         mask: radial-gradient(var(--half) at var(--half) var(--half), transparent 98%, red) calc(-1*var(--half)) calc(-1*var(--half));
+    }
+
+    .fortune-card {
+        opacity: var(--opacity);
     }
 </style>
