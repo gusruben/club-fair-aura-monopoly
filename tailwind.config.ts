@@ -13,8 +13,11 @@ export default {
 				brand: {
 					red: "#ec3750",
 					orange: "#ff8c37",
-				}
-			}
+				},
+			},
+			animation: {
+				"spin-slow": "spin 60s linear infinite",
+			},
 		}
 	},
 

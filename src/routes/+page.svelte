@@ -15,7 +15,7 @@
 </script>
 
 <div class="fixed inset-0 bg-gray-950 overflow-hidden">
-    <div class="fixed inset-0 -z-50 opacity-20">
+    <div class="fixed -left-[10vw] -right-[10vw] -top-[50vh] -bottom-[50vh] -z-50 opacity-20 animate-spin-slow origin-[50%_64%]">
         {#each Array(100) as _}
             <div class="star" style={`--x: ${Math.random() * 100}%; --y: ${Math.random() * 100}%; --size: ${8 + Math.random() * 10}px`}></div>
         {/each}
