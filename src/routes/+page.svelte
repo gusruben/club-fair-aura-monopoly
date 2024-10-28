@@ -21,41 +21,33 @@
         {/each}
     </div>
     
-    <div class="flex flex-col gap-5 justify-center">
+    <div class="flex flex-col gap-5 justify-center mb-10">
         <h1 class="font-sans font-bold text-gray-800 text-[8rem] uppercase text-center leading-none h-12">Find Your Fortune</h1>
         <h1 class="font-sans text-white text-[6rem] text-center leading-none z-10">
             Text <span class="font-bold text-transparent bg-gradient-to-br from-brand-orange to-brand-red bg-clip-text">{import.meta.env.VITE_PHONE_NUMBER}</span>
         </h1>
     </div>
 
-    <div class="bg-gray-900 w-2/3 mx-auto my-10 p-5 rounded-lg border-gray-800 border-2 text-3xl text-white scale-110">
-        {#if fortunes.length}
-            <p>
+    {#if fortunes.length}
+        {#each fortunes as fortune, i}
+            <div class="bg-gray-900 w-2/3 mx-auto my-5 p-5 rounded-lg border-gray-800
+                        border-2 text-3xl text-white fortune-card" style="--index: {i + 1}" >
                 <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
                 <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span><nobr>
-                -{fortunes[0][0]}: {fortunes[0][1]}
-            </p>
-        {:else}
-            <p class="mx-auto">Waiting on a text...</p>
-        {/if}
-    </div>
-    {#each fortunes.slice(1) as fortune, i}
-        <div class="bg-gray-900 w-2/3 mx-auto my-5 p-5 rounded-lg border-gray-800
-                    border-2 text-3xl scale-[90%] text-white fortune-card" style="--index: {i}" >
-            <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
-            <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span><nobr>
-            -{fortune[0]}: {fortune[1]}
+                -{fortune[0]}: {fortune[1]}
+            </div>
+        {/each}
+    {:else}
+        <div class="bg-gray-900 w-2/3 mx-auto my-10 p-5 rounded-lg border-gray-800 border-2 text-3xl text-white">
+            Waiting on a text...
         </div>
-    {/each}
+    {/if}
 
-    {JSON.stringify(fortunes)}
 
     <!-- <img src="hands-on-ball1.png" alt="" class="absolute h-[80%] -bottom-[20%] left-1/2 -translate-x-1/2"> -->
-    <!-- <div class="scale-75 translate-y-20"> -->
         <div class="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/4 w-[90vh] h-[90vh] scale-50">
             <CrystalBall />
         </div>
-    <!-- </div> -->
 </div>
 
 <style>
@@ -73,6 +65,9 @@
     }
 
     .fortune-card {
-        opacity: calc(1 - (var(--index) + 1) / 5);
+        opacity: calc(1 - (var(--index) + 1) / 8);
+        scale: calc(70% + (50% / var(--index)));
+        /* margin-bottom: calc(2rem - (var(--index) * var(--index) * 0.2rem)) */
+        margin-bottom: calc(1rem + (1rem / (var(--index) * var(--index))))
     }
 </style>
