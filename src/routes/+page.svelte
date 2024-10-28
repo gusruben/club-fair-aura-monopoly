@@ -41,7 +41,7 @@
     </div>
     {#each fortunes.slice(1) as fortune, i}
         <div class="bg-gray-900 w-2/3 mx-auto my-5 p-5 rounded-lg border-gray-800
-                    border-2 text-3xl scale-[90%] text-white fortune-card" style="--opacity: {1 - (i + 1) / 5}" >
+                    border-2 text-3xl scale-[90%] text-white fortune-card" style="--index: {i}" >
             <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
             <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span><nobr>
             -{fortune[0]}: {fortune[1]}
@@ -51,11 +51,11 @@
     {JSON.stringify(fortunes)}
 
     <!-- <img src="hands-on-ball1.png" alt="" class="absolute h-[80%] -bottom-[20%] left-1/2 -translate-x-1/2"> -->
-    <div class="scale-75 translate-y-20">
-        <div class="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-[20%] w-[90vh] h-[90vh] scale-75">
+    <!-- <div class="scale-75 translate-y-20"> -->
+        <div class="absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-1/4 w-[90vh] h-[90vh] scale-50">
             <CrystalBall />
         </div>
-    </div>
+    <!-- </div> -->
 </div>
 
 <style>
@@ -73,6 +73,6 @@
     }
 
     .fortune-card {
-        opacity: var(--opacity);
+        opacity: calc(1 - (var(--index) + 1) / 5);
     }
 </style>
