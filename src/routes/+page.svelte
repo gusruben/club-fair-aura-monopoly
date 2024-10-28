@@ -22,7 +22,7 @@
     </div>
     
     <div class="flex flex-col gap-5 justify-center mb-10">
-        <h1 class="font-sans font-bold text-gray-800 text-[8rem] uppercase text-center leading-none h-12">Find Your Fortune</h1>
+        <h1 class="font-sans font-bold text-gray-700 text-[8rem] uppercase text-center leading-none h-12 opacity-40">Find Your Fortune</h1>
         <h1 class="font-sans text-white text-[6rem] text-center leading-none z-10">
             Text <span class="font-bold text-transparent bg-gradient-to-br from-brand-orange to-brand-red bg-clip-text">{import.meta.env.VITE_PHONE_NUMBER}</span>
         </h1>
