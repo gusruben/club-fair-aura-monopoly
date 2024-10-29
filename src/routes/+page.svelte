@@ -33,7 +33,7 @@
             <div class="bg-gray-900 w-2/3 mx-auto my-5 p-5 rounded-lg border-gray-800
                         border-2 text-3xl text-white fortune-card flex flex-row" style="--index: {i + 1}" >
                 {#if fortune.numberName}
-                    <nobr>
+                    <nobr class="font-bold">
                         <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
                         <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span>
                         <!-- <span class="relative after:absolute after:w-full after:h-[60%] after:bg-gradient-to-br after:from-brand-orange
@@ -43,7 +43,7 @@
                         -{fortune.name}:
                     </nobr>
                 {:else}
-                    <p>{fortune.name}: </p>
+                    <p class="font-bold">{fortune.name}: </p>
                 {/if}
                 <p class="ml-2"> {fortune.fortune}</p>
             </div>
