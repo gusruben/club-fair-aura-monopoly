@@ -10,4 +10,22 @@ It's a website meant to be run on a TV at club fairs, and when someone texts the
 
 ## Setup
 
-Coming soon-- The project's not done yet!
+1. Clone the & install dependencies with [Bun](https://bun.sh/)
+```
+git clone https://github.com/gusruben/fortune-phone.git
+
+bun install
+```
+2. Make a [Telnyx](https://telnyx.com/) account, and add $2-$5 worth of credits.
+3. ["Buy" a number](https://portal.telnyx.com/#/numbers/buy-numbers) in the Telnyx portal.
+4. [Create a "messaging profile"](https://portal.telnyx.com/#/programmable-messaging/profiles) for the number, and for "Send a webhook to this URL," paste in `https://example.com/api/telnyx` or the equivalent for wherever you are running this.
+
+   > If you are not running this on a public server, trying using a tool like [bore](https://github.com/ekzhang/bore) or [ngrok](https://ngrok.com/) to tunnel your server to the internet. For example, `bore local 5173 --to bore.pub --port 5678` would result in a URL of `http://bore.pub:5678/api/telnyx`.
+6. Lastly, [select the number you bought](https://portal.telnyx.com/#/numbers/my-numbers) and set the profile to the one you just created.
+7. Obtain an [API key for Claude](https://console.anthropic.com/), and load it with a few credits
+8. Add the API key and phone number to .env:
+```sh
+VITE_PHONE_NUMBER=+1 (234) 555-6789 # This can be in any format you want, it's only used for display
+VITE_ANTHROPIC_API_KEY=sk-ant-XXXXXXXXXXXXX...
+```
+9. Done! The website should be fully functional!
