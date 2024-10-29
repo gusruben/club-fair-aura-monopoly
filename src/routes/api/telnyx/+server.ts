@@ -17,12 +17,12 @@ export async function POST({ request }) {
         if (!name || !safe) {
             name = from.slice(-4)
             numberName = true;
-        }; 
+        }
 
         fortunes.unshift({
             name,
+            numberName,
             fortune: await generateFortune(),
-            numberName: false,
         });
     
         return json({ success: true });
