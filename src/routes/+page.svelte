@@ -43,7 +43,7 @@
                         -{fortune.name}:
                     </nobr>
                 {:else}
-                    <p class="font-bold">{fortune.name}: </p>
+                    <p class="font-bold capitalize">{fortune.name}: </p>
                 {/if}
                 <p class="ml-2"> {fortune.fortune}</p>
             </div>
