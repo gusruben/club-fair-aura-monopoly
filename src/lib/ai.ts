@@ -9,10 +9,11 @@ const client = new Anthropic({
 
 export async function generateFortune() {
     const fortune = await client.messages.create({
-        max_tokens: 20,
+        max_tokens: 64,
         messages: [{ role: "user", content: PROMPT }],
         model: "claude-3-5-sonnet-latest",
     });
+    const fortuneText = (fortune.content[0] as TextBlock).text;
 
-    return (fortune.content[0] as TextBlock).text;
+    return fortuneText.replace(/^["']|["']$/g, ""); // strip quotes
 }

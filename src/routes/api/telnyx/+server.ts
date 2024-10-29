@@ -9,10 +9,7 @@ export async function POST({ request }) {
         const from = payload.data.payload.from.phone_number;
         console.log("Message received from", from);
 
-        // use the set operator to make everything update right
         fortunes.unshift([from.slice(-4), await generateFortune()]);
-        console.log(fortunes[0][1])
-        console.log(fortunes);
     
         return json({ success: true });
     }
