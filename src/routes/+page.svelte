@@ -24,7 +24,7 @@
     <div class="flex flex-col gap-5 justify-center mb-10">
         <h1 class="font-sans font-bold text-gray-700 text-[8rem] uppercase text-center leading-none h-12 opacity-40">Find Your Fortune</h1>
         <h1 class="font-sans text-white text-[6rem] text-center leading-none z-10">
-            Text <span class="font-bold text-transparent bg-gradient-to-br from-brand-orange to-brand-red bg-clip-text">{import.meta.env.VITE_PHONE_NUMBER}</span>
+            Text Your Name: <span class="font-bold text-transparent bg-gradient-to-br from-brand-orange to-brand-red bg-clip-text">{import.meta.env.VITE_PHONE_NUMBER}</span>
         </h1>
     </div>
 
@@ -32,16 +32,20 @@
         {#each fortunes as fortune, i}
             <div class="bg-gray-900 w-2/3 mx-auto my-5 p-5 rounded-lg border-gray-800
                         border-2 text-3xl text-white fortune-card flex flex-row" style="--index: {i + 1}" >
-                <nobr>
-                    <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
-                    <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span>
-                    <!-- <span class="relative after:absolute after:w-full after:h-[60%] after:bg-gradient-to-br after:from-brand-orange
-                                after:to-brand-red after:inset-0 after:-rotate-6 after:translate-y-[30%] after:brightness-50 after:saturate-50">
-                        ({Math.random().toString().slice(2,5)}) {Math.random().toString().slice(2,5)}
-                    </span><nobr> -->
-                    -{fortune[0]}:
-                </nobr>
-                <p class="ml-2"> {fortune[1]}</p>
+                {#if fortune.numberName}
+                    <nobr>
+                        <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
+                        <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span>
+                        <!-- <span class="relative after:absolute after:w-full after:h-[60%] after:bg-gradient-to-br after:from-brand-orange
+                                    after:to-brand-red after:inset-0 after:-rotate-6 after:translate-y-[30%] after:brightness-50 after:saturate-50">
+                            ({Math.random().toString().slice(2,5)}) {Math.random().toString().slice(2,5)}
+                        </span><nobr> -->
+                        -{fortune.name}:
+                    </nobr>
+                {:else}
+                    <p>{fortune.name}: </p>
+                {/if}
+                <p class="ml-2"> {fortune.fortune}</p>
             </div>
         {/each}
     {:else}

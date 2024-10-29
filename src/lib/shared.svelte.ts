@@ -1,8 +1,9 @@
 export let fortunes = $state([
-    [9824, "A splinter is in your future."],
-    [2938, "You are lucky to have lived this long."],
-    [6642, "Nose hairs will become a problem."],
-    [7076, "You are not illiterate."],
-    [1025, "Error 404: Fortune not found"],
-    [2839, "Your next haircut will bring unexpected consequences. The barber knows more than they let on."]
-])
+    { name: "Josh", fortune: "Your next dentist appointment will reveal more than just cavities.", numberName: false },
+    { name: "Jonah", fortune: "A splinter is in your future.", numberName: false },
+    { name: "2839", fortune: "Your next haircut will bring unexpected consequences. The barber knows more than they let on.", numberName: true },
+    { name: "Gus", fortune: "You are not illit  erate.", numberName: false },
+    { name: "2938", fortune: "You are lucky to have lived this long.", numberName: true },
+    { name: "9824", fortune: "Error 404: Fortune not found", numberName: true },
+    { name: "Alex", fortune: "Nose hairs will become a problem.", numberName: false },
+]);
