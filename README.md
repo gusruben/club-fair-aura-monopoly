@@ -22,10 +22,12 @@ bun install
 
    > If you are not running this on a public server, trying using a tool like [bore](https://github.com/ekzhang/bore) or [ngrok](https://ngrok.com/) to tunnel your server to the internet. For example, `bore local 5173 --to bore.pub --port 5678` would result in a URL of `http://bore.pub:5678/api/telnyx`.
 6. Lastly, [select the number you bought](https://portal.telnyx.com/#/numbers/my-numbers) and set the profile to the one you just created.
-7. Obtain an [API key for Claude](https://console.anthropic.com/), and load it with a few credits
+7. Obtain an API key for [Claude](https://console.anthropic.com/) OR [ChatGPT](https://platform.openai.com/account/api-keys), and load it with a few credits.
 8. Add the API key and phone number to .env:
 ```sh
 VITE_PHONE_NUMBER=+1 (234) 555-6789 # This can be in any format you want, it's only used for display
+# Use either one of these, you only need one! I've been getting better results with Claude.
 VITE_ANTHROPIC_API_KEY=sk-ant-XXXXXXXXXXXXX...
+VITE_OPENAI_API_KEY=sk-proj-XXXXXXXXXXXXX...
 ```
 9. Done! The website should be fully functional!
