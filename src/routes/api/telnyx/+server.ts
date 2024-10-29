@@ -1,5 +1,6 @@
 import { json } from "@sveltejs/kit";
 import { fortunes } from "$lib/shared.svelte.js";
+import { generateFortune } from "$lib/ai";
 
 export async function POST({ request }) {
     const payload = await request.json();
@@ -10,14 +11,11 @@ export async function POST({ request }) {
 
         // use the set operator to make everything update right
         fortunes.unshift([from.slice(-4), await generateFortune()]);
+        console.log(fortunes[0][1])
         console.log(fortunes);
     
         return json({ success: true });
     }
     
     return json({ success: false });
-}
-
-async function generateFortune() {
-    return "This is a test fortune!";
 }

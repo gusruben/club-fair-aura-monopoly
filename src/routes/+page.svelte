@@ -31,14 +31,17 @@
     {#if fortunes.length}
         {#each fortunes as fortune, i}
             <div class="bg-gray-900 w-2/3 mx-auto my-5 p-5 rounded-lg border-gray-800
-                        border-2 text-3xl text-white fortune-card" style="--index: {i + 1}" >
-                <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
-                <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span><nobr>
-                <!-- <span class="relative after:absolute after:w-full after:h-[60%] after:bg-gradient-to-br after:from-brand-orange
-                            after:to-brand-red after:inset-0 after:-rotate-6 after:translate-y-[30%] after:brightness-50 after:saturate-50">
-                    ({Math.random().toString().slice(2,5)}) {Math.random().toString().slice(2,5)}
-                </span><nobr> -->
-                -{fortune[0]}: {fortune[1]}
+                        border-2 text-3xl text-white fortune-card flex flex-row" style="--index: {i + 1}" >
+                <nobr>
+                    <span class="blur-[8px]">({Math.random().toString().slice(2,5)})</span>
+                    <span class="blur-[8px]">{Math.random().toString().slice(2,5)}</span>
+                    <!-- <span class="relative after:absolute after:w-full after:h-[60%] after:bg-gradient-to-br after:from-brand-orange
+                                after:to-brand-red after:inset-0 after:-rotate-6 after:translate-y-[30%] after:brightness-50 after:saturate-50">
+                        ({Math.random().toString().slice(2,5)}) {Math.random().toString().slice(2,5)}
+                    </span><nobr> -->
+                    -{fortune[0]}:
+                </nobr>
+                <p class="ml-2"> {fortune[1]}</p>
             </div>
         {/each}
     {:else}
