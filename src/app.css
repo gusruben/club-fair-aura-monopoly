@@ -1,18 +1,18 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 @layer base {
-    @font-face {
-        font-family: 'Phantom Sans';
-        src: url('/fonts/phantom_sans_regular.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: 'Phantom Sans';
-        src: url('/fonts/phantom_sans_bold.woff') format('woff');
-        font-weight: bold;
-        font-style: normal;
-    }
+	@font-face {
+		font-family: "Phantom Sans";
+		src: url("/fonts/phantom_sans_regular.woff") format("woff");
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "Phantom Sans";
+		src: url("/fonts/phantom_sans_bold.woff") format("woff");
+		font-weight: bold;
+		font-style: normal;
+	}
 }

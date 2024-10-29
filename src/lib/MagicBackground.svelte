@@ -78,4 +78,4 @@
 	onMount(animateBackground);
 </script>
 
-<canvas bind:this={canv} {width} {height} class="w-full h-full"></canvas>
+<canvas bind:this={canv} {width} {height} class="h-full w-full"></canvas>
