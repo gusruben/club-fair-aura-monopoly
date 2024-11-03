@@ -1,6 +1,4 @@
-# 🔮 Fortune Phone
-
-> Better name pending...
+# 🔮 Club Fair Aura Monopoly
 
 Inspired by [Club Fair Attention Monopoly](https://github.com/tmb/club-fair-attention-monopoly), I wanted to make a project to advertise [Hack Club](https://hackclub.com) at club fairs, with a little more pizzazz.
 
