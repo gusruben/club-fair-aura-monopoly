@@ -6,7 +6,7 @@ It's a website meant to be run on a TV at club fairs, and when someone texts the
 
 If you end up using this at your club fair, send me a photo @ <gusruben@protonmail.com>!
 
-![image](https://github.com/user-attachments/assets/4bd24048-c5e8-43d0-813a-102d0489dfdb)
+![image](https://github.com/user-attachments/assets/99fe2296-debf-490d-9e2e-886b32dcac6d)
 
 ## Setup
 
